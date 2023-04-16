@@ -1,0 +1,31 @@
+{
+  "name": "osx-otp-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg -c package.json index.js",
+    "install": "npm run build && cp bin/osx-otp-notifier /usr/local/bin && cp com.osx-otp-notifier.plist ~/Library/LaunchAgents",
+    "load": "launchctl load com.osx-otp-notifier.plist",
+    "unload": "launchctl unload com.osx-otp-notifier.plist "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parse-otp-message": "^1.0.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/sqlite3/lib/binding/**/*"
+    ],
+    "targets": [
+      "macos"
+    ],
+    "outputPath": "bin"
+  }
+}
