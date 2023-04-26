@@ -65,7 +65,7 @@ const db = new sqlite3.Database(dbFile, sqlite3.OPEN_READONLY, (err) => {
           let body = newest.text;
           if (body) {
             let code = otp(body);
-            if (body && code) {
+            if (body && code && code.code) {
               notify({
                 subtitle: code.service
                   ? `New OTP (${code.service})`
