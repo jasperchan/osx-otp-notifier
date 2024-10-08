@@ -6,9 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "pkg -c package.json index.js",
-    "install": "npm run build && cp bin/osx-otp-notifier /usr/local/bin && cp com.osx-otp-notifier.plist ~/Library/LaunchAgents",
+    "deploy": "npm run build && sudo cp bin/osx-otp-notifier /usr/local/bin && sudo cp com.osx-otp-notifier.plist ~/Library/LaunchAgents",
     "load": "launchctl load com.osx-otp-notifier.plist",
-    "unload": "launchctl unload com.osx-otp-notifier.plist "
+    "unload": "launchctl unload com.osx-otp-notifier.plist",
+    "start": "launchctl start osx-otp-notifier",
+    "stop": "launchctl stop osx-otp-notifier"
   },
   "author": "",
   "license": "ISC",

@@ -29,3 +29,4 @@ text message forwarding should be enabled (https://support.apple.com/guide/messa
   ![image](https://user-images.githubusercontent.com/2671978/232332686-fa4af1c8-4ad0-41a6-91f1-9c55159dcc14.png)
 
 - `npm run load` (loads the job and registers it to run on startup).
+- `npm run start` to start the listener (should get a notification that it's ready).
